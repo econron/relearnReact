@@ -7,3 +7,24 @@
 .sidebyside li {
     display: inline;
 }
+
+.layer1 {
+    box-shadow:
+      0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+      0 5px 6.1px rgba(0, 0, 0, 0.076),
+      0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+      0 19.2px 19.8px rgba(0, 0, 0, 0.092),
+      0 38.4px 34.8px yellow,
+      0 101px 74px rgba(0, 0, 0, 0.13);
+  }
+.layer2 {
+    box-shadow:
+      0px 0px 0px rgba(230, 180, 15, 0.9),
+      0px 20px 0px rgba(8, 131, 161, 0.9)
+  }
+.layer3 {
+    box-shadow:
+      0 20px 0 -10px rgb(198, 224, 231),
+      0 40px 0 -20px rgb(105, 171, 209),
+      0 60px 0 -30px rgb(27, 115, 165)
+  }
