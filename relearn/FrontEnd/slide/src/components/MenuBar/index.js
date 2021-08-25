@@ -25,11 +25,9 @@ const MenuBar = props => {
       break;
     case 'vaccine':
       vaccineStyle = styled;
-      break; 
-    default:
-      let nothing = 'non';        
+      break;      
   }
-  console.log(newsStyle);
+
     return (
       <>
       <ul className="sidebyside">

@@ -1,29 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
+import { Transition } from 'react-transition-group';
 import Ingredient from './Ingredient/index';
 import News from './News/index';
 import Programming from './Programming/index';
 import Vaccine from './Vaccine/index';
 import MenuBar from './MenuBar';
 import axios from 'axios';
+import './app.css'
 
 const baseUrl = "http://127.0.0.1:8000/api/state";
 // axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const App = () => {
   const [component, setComponent] = useState('vaccine');
-  const [toggle, set] = useState(false)
-  const transitions = useTransition(toggle, {
-    from: { position: 'absolute', opacity: 0.3 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0.3 },
-    reverse: toggle,
-    config : { duration: 4000 },
-    // config: config.molasses,
-    onRest: () => set(!toggle),
-  })
-
-  console.log('component: ' + component);
 
   useEffect(() => {
     axios.get(baseUrl).then((response) => {
@@ -65,22 +54,29 @@ const App = () => {
     });
   });
 
-  console.log('next: ' + next);
+  useEffect(() => {
+    window.setTimeout(() => {
+    let fade = document.getElementById('fade');
+    fade.className = '';
+    fade.className= 'first';
+    }, 4000);
+  });
 
-  return transitions(({ opacity }) =>
-    (
-      <>
-      <animated.div
-        style={{
-          position: 'absolute',
-          opacity: opacity.to({ range: [1.0, 0.0], output: [0, 1] }),
-        }}>
-        { renderObject }
-        <MenuBar styledimage={component} />
-      </animated.div>
-      </>
-    )
+
+  useEffect(() => {
+    window.setTimeout(() => {
+    let fade = document.getElementById('fade');
+    fade.className = '';
+    fade.className= 'fade';
+    }, 8000);
+  });
+
+  return (
+    <div id="fade" className="first">
+    { renderObject }
+      <MenuBar styledimage={component} />
+    </div>
   );
-};  
+};
 
 export default App;

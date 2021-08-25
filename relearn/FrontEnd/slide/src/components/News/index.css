@@ -1,0 +1,39 @@
+.frame{
+    position: absolute;
+    width: calc(100vh * 0.421875);
+    height: calc(100vh * 0.421875);
+    background-color: black;
+}
+.frame .cover{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+.frame .hands{
+    width: calc(100vh * 0.421875);
+    height: calc(100vh * 0.421875);
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-in-out;
+    transform: rotate(0deg);
+}
+.frame .hands .hour-dot{
+    width: calc(100vh * 0.021875);
+    height: calc(100vh * 0.021875);
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    top: calc(100vh * 0.0208333);
+}
+.frame .hands .min-dot{
+    width: calc(100vh * 0.009375);
+    height: calc(100vh * 0.009375);
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    top: calc(100vh * 0.0208333);
+}
