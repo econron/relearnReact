@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+// import SlickApp from './components/SlickApp';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -14,7 +15,7 @@ function tick(){
   );
 }
 
-setInterval(tick, 8000);
+setInterval(tick, 12000);
 
 // ReactDOM.render(
 //   <React.StrictMode>

@@ -1,12 +1,20 @@
-.first {
-    -webkit-transition: all 1s ;
-    -moz-transition: all 1s ;
-    -ms-transition: all 1s ;
-    -o-transition: all 1s ;
-    transition: all 1s ;
+@keyframes fadein {
+  from {
     opacity: 0;
   }
-
-.fade {
+  to {
     opacity: 1;
-    }
+  }
+}
+
+.fadeIn {
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+
+.fadeOut {
+  transition: opacity 4s, visibility 4s;
+  opacity: 0;
+  visibility: hidden;
+}
+

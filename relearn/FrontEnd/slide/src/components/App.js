@@ -6,7 +6,7 @@ import Programming from './Programming/index';
 import Vaccine from './Vaccine/index';
 import MenuBar from './MenuBar';
 import axios from 'axios';
-import './app.css'
+import './app.css';
 
 const baseUrl = "http://127.0.0.1:8000/api/state";
 // axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -58,8 +58,8 @@ const App = () => {
     window.setTimeout(() => {
     let fade = document.getElementById('fade');
     fade.className = '';
-    fade.className= 'first';
-    }, 4000);
+    fade.className= 'fadeIn';
+    });
   });
 
 
@@ -67,12 +67,12 @@ const App = () => {
     window.setTimeout(() => {
     let fade = document.getElementById('fade');
     fade.className = '';
-    fade.className= 'fade';
-    }, 8000);
+    fade.className= 'fadeOut';
+    }, 7000);
   });
 
   return (
-    <div id="fade" className="first">
+    <div id="fade" className="fadeIn">
     { renderObject }
       <MenuBar styledimage={component} />
     </div>
